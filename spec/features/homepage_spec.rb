@@ -27,13 +27,5 @@ feature 'Smoke test' do
     expect(rows).to have_content('2014-10-29')
     expect(rows).to have_content('2014-11-26')
     expect(rows).to have_content('2014-12-24')
-
-    pending 'Finish the tests!'
-
-    # There is still a text box to enter another period date
-    # She enters another date
-    #fill_in('Period date', with: '2014-09-27')
-
-    # The page updates the page and now lists both dates
   end
 end
