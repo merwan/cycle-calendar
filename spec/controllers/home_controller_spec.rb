@@ -17,5 +17,12 @@ describe HomeController do
 
       expect(assigns(:menstruation_date)).to eq(next_date)
     end
+
+    it 'passes the initial date to view' do
+      initial_date = Date.new(2014,10,12)
+      post :index, { 'menstruation_date' => initial_date }
+
+      expect(assigns(:initial_date)).to eq(initial_date)
+    end
   end
 end

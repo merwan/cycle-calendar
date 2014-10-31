@@ -1,9 +1,8 @@
 class HomeController < ApplicationController
   def index
     if request.post?
-      date = Date.parse(menstruation_params)
-      next_date = MenstruationCalculator.next(date)
-      @menstruation_date = next_date
+      @initial_date = Date.parse(menstruation_params)
+      @menstruation_date = MenstruationCalculator.next(@initial_date)
     end
   end
 
