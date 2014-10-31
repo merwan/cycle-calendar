@@ -3,6 +3,7 @@
 <form method="POST">
   <input type="hidden" name="<%= request_forgery_protection_token.to_s %>" value="<%= form_authenticity_token %>" />
   <input id="id_new_menstruation" name="menstruation_date" placeholder="Beginning of menstruation" />
+  <input value="Calculate" type="submit" />
 </form>
 
 <table id="id_menstruations_table">

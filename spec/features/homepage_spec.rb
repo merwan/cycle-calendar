@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Smoke test' do
-  scenario 'Alice can add her period dates and retrieve them later', js: true do
+  scenario 'Alice can add her period dates and retrieve them later' do
     # Alice visit the website to help her remember her period dates
     visit('/')
 
@@ -21,7 +21,7 @@ feature 'Smoke test' do
     # "2014-10-29"
     # "2014-11-26"
     # "2014-12-24"
-    inputbox.native.send_keys :enter
+    click_button('Calculate')
     table = find('#id_menstruations_table')
     rows = table.find('tr')
     expect(rows).to have_content('2014-10-29')
