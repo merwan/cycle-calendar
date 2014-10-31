@@ -10,10 +10,12 @@ describe HomeController do
 
   describe 'POST #index' do
     it 'calculates the next menstruation date' do
-      allow(MenstruationCalculator).to receive(:next) { Date.new(2014,10,12) }.and_return(Date.new(2014,12,24))
-      post :index, { 'menstruation_date' => '2014-10-12' }
+      initial_date = Date.new(2014,10,12)
+      next_date = Date.new(2014,12,24)
+      allow(MenstruationCalculator).to receive(:next) { initial_date }.and_return(next_date)
+      post :index, { 'menstruation_date' => initial_date }
 
-      expect(assigns(:menstruation_date)).to eq('2014-12-24')
+      expect(assigns(:menstruation_date)).to eq(next_date)
     end
   end
 end

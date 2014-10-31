@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     if request.post?
       date = Date.parse(menstruation_params)
       next_date = MenstruationCalculator.next(date)
-      @menstruation_date = next_date.to_s
+      @menstruation_date = next_date
     end
   end
 
