@@ -7,4 +7,11 @@ describe 'routing to home' do
       action: 'index'
     )
   end
+
+  it 'routes POST /' do
+    expect(post: '/').to route_to(
+      controller: 'home',
+      action: 'index'
+    )
+  end
 end

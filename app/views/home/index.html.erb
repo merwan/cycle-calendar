@@ -1,6 +1,10 @@
-<h1>Check your period</h1>
+<h1>Calculate your next menstrual cycle period</h1>
 
-<input name="Period date" id="id_new_period" placeholder="Enter a period date" />
+<form method="POST">
+  <input type="hidden" name="<%= request_forgery_protection_token.to_s %>" value="<%= form_authenticity_token %>" />
+  <input id="id_new_menstruation" name="menstruation_date" placeholder="Beginning of menstruation" />
+</form>
 
-<table id="id_periods_table">
+<table id="id_menstruations_table">
+  <tr><td><%= @menstruation_date %></td></tr>
 </table>
